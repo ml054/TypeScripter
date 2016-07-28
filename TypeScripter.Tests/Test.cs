@@ -29,6 +29,13 @@ namespace TypeScripter.Tests
 			Assert.AreEqual(0, result.ReturnCode, result.Output);
 		}
 
+	    protected void AssertNotValidTypeScript(string typeScript)
+	    {
+	        Console.WriteLine(typeScript);
+	        var result = TypeScriptCompiler.Compile(typeScript);
+            Assert.AreNotEqual(0, result.ReturnCode, result.Output);
+	    }
+
 		protected void ValidateTypeScript(StringBuilder typeScript)
 		{
 			ValidateTypeScript(typeScript.ToString());
