@@ -1,15 +1,12 @@
 ﻿{
-
   "dependencies": {
-    "NUnit": "2.6.4",
-    "NUnit.Runners":  "2.6.4" 
+    "NUnit": "3.4.1",
+    "NUnit.Runners": "3.4.1"
   },
   "frameworks": {
-    "net45": {
-    }
+    "net45": {}
   },
   "runtimes": {
-    "win": {
-    }
+    "win": {}
   }
 }

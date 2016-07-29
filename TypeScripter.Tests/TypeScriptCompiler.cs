@@ -68,11 +68,13 @@ namespace TypeScripter.Tests
 		{
 			var options = "";
 			var process = new Process();
-			process.StartInfo.FileName = "tsc.cmd";
+			
 			process.StartInfo.Arguments = string.Format("{0} {1}", options, string.Join(" ", files));
 #if DOTNET
+            process.StartInfo.FileName = "tsc.cmd";
             process.StartInfo.WorkingDirectory = System.IO.Directory.GetCurrentDirectory();
 #else
+            process.StartInfo.FileName = AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "/../../node_modules/.bin/tsc.cmd";
             process.StartInfo.WorkingDirectory = System.IO.Directory.GetCurrentDirectory() + "\\..\\..";
 #endif
             process.StartInfo.CreateNoWindow = true;
